@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX Helmets - Premium F1 Replicas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #2d2d2d;
+            --accent-color: #ff6b35;
+            --accent-hover: #e55a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-dark: #333333;
+            --surface-light: #f8f9fa;
+            --surface-dark: #1e1e1e;
+            --border-light: #e0e0e0;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-heavy: rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Products Section */
+        .products-section {
+            background: white;
+            padding: 6rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow-light);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px var(--shadow-medium);
+        }
+
+        .product-image {
+            position: relative;
+            height: 220px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.875rem 1.5rem;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .add-to-cart:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .add-to-cart:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--text-primary);
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--secondary-color);
+            padding-top: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1rem;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">APEX</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>APEX HELMETS & ACCESSORIES</h1>
+            <p>Love Formula 1? So do we. At Apex Helmets, we bring the thrill of the track to your collection with high-quality, fan-made replica F1 helmets. Whether you're a die-hard supporter of legends like Senna, Schumacher, or Hamilton – or you're backing the rising stars of today – we've got something for every racing soul.</p>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/400x300/ff6b35/ffffff?text=F1+HELMET" alt="F1 Helmet">
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <h2 class="section-title">SPECIAL EDITION HELMETS</h2>
+            <p class="section-subtitle">Premium replica helmets from your favorite F1 drivers</p>
+        </div>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/160x160/1e3a8a/ffffff?text=MV33" alt="Max Verstappen Helmet">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">MAX VERSTAPPEN | 2025 SEASON</h3>
+                    <p class="product-description">Official replica of Max's championship-winning helmet design from the 2025 season.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/160x160/dc2626/ffffff?text=MV33" alt="Max Verstappen Helmet 2024">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">MAX VERSTAPPEN | 2024 SEASON</h3>
+                    <p class="product-description">Classic design from Max's dominant 2024 championship campaign.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/160x160/059669/ffffff?text=NH27" alt="Nico Hulkenberg Helmet">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">NICO HULKENBERG | 2024 SEASON</h3>
+                    <p class="product-description">Distinctive German-inspired design from Nico's stellar 2024 performance.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/160x160/ea580c/ffffff?text=LN4" alt="Lando Norris Helmet">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">LANDO NORRIS | 2024 SEASON</h3>
+                    <p class="product-description">Vibrant McLaren colors from Lando's breakthrough 2024 season.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2 class="section-title">ACCESSORIES</h2>
+            <p class="section-subtitle">Complete your F1 collection with premium accessories</p>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/160x160/1e40af/ffffff?text=FIGURE" alt="Max Verstappen Figure">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">MAX VERSTAPPEN ACTION FIGURE</h3>
+                    <p class="product-description">Detailed collectible figure of the three-time world champion.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/160x160/dc2626/ffffff?text=RB20" alt="Red Bull RB20">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">RED BULL RB20 | 1:43 SCALE</h3>
+                    <p class="product-description">Precision die-cast model of Max's championship-winning car.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/160x160/374151/ffffff?text=W15" alt="Mercedes W15">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">MERCEDES W15 | 1:43 SCALE</h3>
+                    <p class="product-description">Lewis Hamilton's silver arrow in stunning detail.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/160x160/059669/ffffff?text=KEY" alt="F1 Keychain">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">F1 PREMIUM KEYCHAIN</h3>
+                    <p class="product-description">Sleek metal keychain featuring the iconic F1 logo.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="about">
+        <div class="footer-content">
+            <h3>APEX HELMETS</h3>
+            <div class="footer-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">TikTok</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Apex Helmets | Formula 1 Shop. All rights reserved.</p>
+                <p>Privacy Policy | Terms of Service | Contact Us</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Add visual feedback
+                const originalText = this.textContent;
+                this.textContent = 'Added!';
+                this.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = '';
+                }, 2000);
+                
+                // You can add actual cart functionality here
+                console.log('Added to cart:', this.closest('.product-card').querySelector('.product-title').textContent);
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

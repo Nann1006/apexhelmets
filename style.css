@@ -1,0 +1,193 @@
+@font-face {
+    font-family: "MyFont";
+    src: url("Fonts/Balibold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.head {
+    display: flex;
+    justify-content: flex-end;
+    padding: 28px;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    background-color: #e8e0e0;
+
+}
+.head a {
+    transition: 0.25s;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    border-radius: 10px;
+ 
+}
+.head a:hover {
+    transition: 0.25s;
+    background-color: #454545;
+    color: white;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+
+.head ul {
+    display: flex;
+    padding: 10px 18px;
+    gap: 47px;
+    list-style: none;
+    
+    
+}
+body{
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.baner {
+    width: 80%;
+    margin: 20px auto;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    height: 370px;
+}
+
+.baner1 h1 {
+    color: #878ea2;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.baner1 p {
+    color: #333;
+    margin-top: 30px;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+#logo {
+    width: 250px;
+    height: auto;
+}
+#nann{
+    font-size: 50px;
+    color: black;
+    font-family: "MyFont";
+    opacity: 80%;
+
+    
+}
+.H1 {
+    text-align: center;
+    font-size: 32px;
+    padding: 15px;
+    color: rgb(48, 48, 48);
+    background-color: #e8e0e0;
+    border-radius: 13px;
+    font-family: "MyFont";
+    font-weight: 100;
+
+}
+.bg {
+    background-color: #e8e0e0;
+    padding: 40px 20px;
+}
+
+.product {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+    justify-items: center;
+}
+.product-box {
+    background-color: white;
+    border-radius: 13px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+    width: 430px;
+    height: 280px;
+}
+
+.product-box img {
+    width: 145px;
+    height: 145px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    
+}
+
+.product-box:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.211);
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.Product-boxh1 {
+    font-size: 15px;
+    margin: 10px 0 5px;
+}
+
+.product-p1 {
+    font-size: 13px;
+}
+.Order {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #de1d1d;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 13px;
+}
+/* Footer */
+.back {
+    background-color: #000000dc;
+    color: white;
+    padding: 40px 20px;
+}
+.Mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+    font-size: 17px;
+}
+.bottom-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+    font-size: 13px;
+}
+
+.Mid p,a {
+    margin: 0;
+    text-align: right;
+}
+
+.a1 {
+    color: white;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.a1:hover {
+    color: black;
+    background-color: white;
+    padding: 6px;
+    border-radius: 6px;
+    transition: 0.25s;
+}
+
